@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Dungeon Strass</title>
+<style>
+body{background:#1a1410;color:#eee;font-family:serif;margin:0;padding:10px}
+button{margin:2px;cursor:pointer}.card{width:90px;height:120px;background:#3b2f1e;color:#ffd;border:2px solid #c9a227;border-radius:6px}
+#dice{position:fixed;top:40%;left:45%;width:80px;height:80px;background:#fff;color:#000;font-size:40px;text-align:center;line-height:80px;border-radius:12px;border:3px solid #000}
+#dice.rolling{animation:spin .3s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+#layout{display:flex;gap:10px}#log{height:80px;overflow:auto;white-space:pre;font-size:12px}canvas{max-width:100%}
+</style></head><body>
+<div id="menu"><h1>Dungeon Strass</h1><div id="classes"></div>
+<label><input type="checkbox" id="admin"> Personagem 0 (admin: editor em tempo real)</label>
+<p><a href="studio.html" style="color:#c9a227">Studio</a></p></div>
+<div id="game" hidden><div id="stats"></div>
+<div id="layout"><div style="overflow:auto"><canvas id="map"></canvas></div><div id="editor" hidden></div></div>
+<div id="hand"></div><button id="draw">Comprar carta</button><div id="log"></div></div>
+<div id="dice" hidden></div>
+<script type="module" src="src/main.js"></script></body></html>

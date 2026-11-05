@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Dungeon Strass Studio</title>
+<style>body{background:#1a1410;color:#eee;font-family:serif;padding:10px}button{margin:2px}#layout{display:flex;gap:10px}</style></head><body>
+<h1>Studio</h1><p><a href="index.html" style="color:#c9a227">Voltar ao jogo</a> — mapas salvos aqui são carregados pelo editor do admin.</p>
+<div id="layout"><div style="overflow:auto"><canvas id="map"></canvas></div><div id="editor"></div></div>
+<script type="module">
+import { createLevel1, deserializeLevel } from './src/dungeon.js';
+import { mountEditor, drawLevel } from './src/editor.js';
+import { TS } from './src/render.js';
+let level = createLevel1();
+const canvas = document.getElementById('map'), ctx = canvas.getContext('2d');
+const redraw = () => { canvas.width = level.width * TS; canvas.height = level.height * TS; drawLevel(ctx, level, null); };
+mountEditor(document.getElementById('editor'), canvas, () => level, l => (level = l), redraw);
+redraw();
+</script></body></html>

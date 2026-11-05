@@ -1,0 +1,6 @@
+{
+  "name": "dungeon-strass",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "test": "node --test test/*.test.js", "start": "python3 -m http.server 8080" }
+}
